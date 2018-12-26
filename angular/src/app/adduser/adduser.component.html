@@ -1,0 +1,39 @@
+<form [formGroup]='addform' (ngSubmit)='submitted()'>
+
+    <div class="form-group">
+        <label for="firstName">First Name:</label>
+        <input type="text" class="form-control" formControlName="firstName" id="firstName">
+        <div *ngIf="submit && addform.controls.firstName.errors" class="error">
+          <div *ngIf="addform.controls.firstName.errors.required">First Name is required</div>
+        </div>
+      </div>
+
+
+      <div class="form-group">
+          <label for="lastName">Last Name:</label>
+          <input type="text" class="form-control" formControlName="lastName" id="lastName">
+          <div *ngIf="submit && addform.controls.lastName.errors" class="error">
+            <div *ngIf="addform.controls.lastName.errors.required">Last Name is required</div>
+          </div>
+        </div>
+  
+
+    <div class="form-group">
+      <label for="email">Email address:</label>
+      <input type="email" class="form-control" formControlName="email" id="email">
+      <div *ngIf="submit && addform.controls.email.errors" class="error">
+        <div *ngIf="addform.controls.email.errors.required">Email is required</div>
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label for="email">Password:</label>
+      <input type="password" class="form-control" formControlName="password" id="password">
+      <div *ngIf="submit && addform.controls.password.errors" class="error">
+        <div *ngIf="addform.controls.password.errors.required">Password is required</div>
+      </div>
+    </div>
+  
+    <button class="btn btn-default">Submit</button>
+  
+  </form>

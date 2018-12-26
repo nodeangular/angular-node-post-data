@@ -1,0 +1,5 @@
+<div *ngIf="messageService.message.length">
+
+  <div class="alert alert-success" *ngFor='let message of messageService.message'> {{message}} </div>
+
+</div>

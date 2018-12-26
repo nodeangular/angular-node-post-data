@@ -1,0 +1,23 @@
+<form [formGroup]='complexForm' (ngSubmit)='submitted()'>
+  <div class="form-group">
+    <label for="email">Email address:</label>
+    <input type="email" class="form-control" formControlName="email" id="email">
+    <div *ngIf="submit && complexForm.controls.email.errors" class="error">
+      <div *ngIf="complexForm.controls.email.errors.required">Email is required</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="email">Password:</label>
+    <input type="password" class="form-control" formControlName="password" id="password">
+    <div *ngIf="submit && complexForm.controls.password.errors" class="error">
+      <div *ngIf="complexForm.controls.password.errors.required">Password is required</div>
+    </div>
+  </div>
+
+  <button class="btn btn-default">Login</button>
+  <div *ngIf="invalidLogin" class="error">
+    <div>Invalid credentials.</div>
+  </div>
+
+</form>
